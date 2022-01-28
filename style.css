@@ -1,0 +1,238 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    background-color: var(--BgLight);
+}
+
+* {
+    text-decoration: none;
+}
+
+.container .user-image img {
+    display: flex;
+    align-items: center;
+
+    width: 100px;
+    height: 100px;
+    border-radius: 80px;
+    border-color: black;
+}
+
+.background-box {
+    max-width: 1920px;
+    width: 100%;
+    height: 245px;
+    position: absolute;
+    z-index: -1;
+    background-color: var(--BgLightTop);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0 auto;
+}
+
+.principal-header img {
+    margin-right: 15px;
+}
+
+.principal-header {
+    align-items: center;
+    display: inline-flex;
+}
+
+header {
+    background-color: var(--BgLightTop);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5em 0;
+}
+
+header .title-box .title {
+    color: var(--ColorDark);
+    margin-bottom: -10px;
+}
+
+header .title-box p {
+    color: var(--ColorDarkLight);
+    font-weight: 700;
+}
+
+body .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header .toggle-mode {
+    display: flex;
+    align-items: center;
+    color: hsl(230, 22%, 74%);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+header .toggle-mode .btnToggle {
+    margin-left: 10px;
+    -webkit-appearance: none;
+    width: 44px;
+    height: 22px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%)); 
+    outline: 0;
+    position: relative;
+}
+
+header .toggle-mode .btnToggle::before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    border-radius: 50px;
+    background-color: var(--BgLight);
+    transform: translateX(22px) scale(0.9);
+    transition: transform 0.3s;
+}
+
+header .toggle-mode .btnToggle:checked::before {
+    background: var(--BgLight);
+    transform: translateX(0) scale(0.9);
+}
+
+main .followers, 
+main .grid-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--BgLightCard);
+    position: relative;
+}
+
+.card:hover {
+    background-color: var(--BgLightCardHover);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    border-radius: 8px 8px 0px 0px;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.card.facebook::before {
+    background: hsl(208, 92%, 53%);
+}
+
+.card.twitter::before {
+    background: hsl(203, 89%, 53%);
+}
+
+.card.instagram::before {
+    background-image: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+}
+
+.card.youtube::before {
+    background: hsl(348, 97%, 39%);
+}
+
+.card .username {
+    display: flex;
+    justify-content: center;
+    color: hsl(228, 12%, 44%);
+    font-weight: 700;
+}
+
+.card .username img {
+    margin-right: 8px;
+}
+
+.card .count-follow span {
+    font-size: 4em;
+    font-weight: 700;
+    color: var(--ColorDark);
+    letter-spacing: 0;
+}
+
+.card .count-follow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 0;
+    font-size: 1.1em;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: hsl(228, 12%, 44%);
+}
+
+.card span {
+    display: flex;
+    align-items: center;
+    color: hsl(163, 72%, 41%);
+    font-weight: 700;
+}   
+
+.card span img {
+    margin-right: 4px;
+}
+
+.card span.down {
+    color: hsl(356, 69%, 56%);
+}
+
+main .overview {
+    margin-top: 40px;
+}
+
+main .overview h2 {
+    color: var(--ColorDarkLight);
+    font-size: 1.5em;
+}
+
+main .grid-overview {
+    margin: 30px 0;
+}
+
+.grid-overview .card .title-card {
+    margin-bottom: 20px;
+}
+
+.grid-overview .card .title-card span {
+    font-size: 1.1em;
+    color: hsl(228, 12%, 44%);
+}
+
+.grid-overview .card .title-card, .grid-overview .card .text-card {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.grid-overview .card .text-card {
+    align-items: baseline;
+    margin-bottom: -40px;
+}
+
+.grid-overview .card .text-card p{
+    font-size: 2.3em;
+    font-weight: 700;
+    color: var(--ColorDark);
+}
